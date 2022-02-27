@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "node-red-app": "packages/node-red-app"
+  }
 }

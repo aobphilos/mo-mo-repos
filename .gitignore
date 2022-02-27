@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/data
 
 # dependencies
 /node_modules
@@ -37,3 +38,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local

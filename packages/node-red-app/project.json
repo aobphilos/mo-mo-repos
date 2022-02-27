@@ -1,0 +1,64 @@
+{
+  "root": "packages/node-red-app",
+  "sourceRoot": "packages/node-red-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/node-red-app",
+        "main": "packages/node-red-app/moleculer.config.ts",
+        "tsConfig": "packages/node-red-app/tsconfig.app.json",
+        "assets": ["packages/node-red-app/*.md"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/node-red-app/src/environments/environment.ts",
+              "with": "packages/node-red-app/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx run node-red-app:build",
+          "moleculer-runner --repl --config dist/packages/node-red-app/moleculer.config.js"
+        ],
+        "parallel": false,
+        "envFile": "packages/node-red-app/.env.local"
+      }
+    },
+    "repl": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "buildTarget": "node-red-app:build",
+        "command": "moleculer connect TCP"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/node-red-app/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/node-red-app"],
+      "options": {
+        "jestConfig": "packages/node-red-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["main-app"]
+}
