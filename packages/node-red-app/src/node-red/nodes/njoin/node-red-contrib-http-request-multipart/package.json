@@ -1,0 +1,75 @@
+{
+  "_from": "node-red-contrib-http-request-multipart@^0.2.11",
+  "_id": "node-red-contrib-http-request-multipart@0.2.11",
+  "_inBundle": false,
+  "_integrity": "sha1-dJsUP9N81ePT4R4Tw5hLU/KDdzg=",
+  "_location": "/node-red-contrib-http-request-multipart",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "node-red-contrib-http-request-multipart@^0.2.11",
+    "name": "node-red-contrib-http-request-multipart",
+    "escapedName": "node-red-contrib-http-request-multipart",
+    "rawSpec": "^0.2.11",
+    "saveSpec": null,
+    "fetchSpec": "^0.2.11"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/node-red-contrib-http-request-multipart/-/node-red-contrib-http-request-multipart-0.2.11.tgz",
+  "_shasum": "749b143fd37cd5e3d3e11e13c3984b53f2837738",
+  "_spec": "node-red-contrib-http-request-multipart@^0.2.11",
+  "_where": "/Users/aphpbonn/work/ConvoLab/convolab-core/convolab-messagelogic/node-red",
+  "author": {
+    "name": "Aiman Shaharuddin",
+    "email": "psyntium@gmail.com",
+    "url": "https://github.com/psyntium"
+  },
+  "bugs": {
+    "url": "https://github.com/psyntium/node-red-contrib-http-request-multipart/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Yohann Ciurlik",
+      "email": "spawnrider@gmail.com",
+      "url": "https://github.com/spawnrider"
+    },
+    {
+      "name": "Mohamed Chekir",
+      "email": "medchkir@gmail.com",
+      "url": "https://github.com/medchkir"
+    }
+  ],
+  "dependencies": {
+    "request": "^2.74.0"
+  },
+  "deprecated": false,
+  "description": "A Node-RED node for performing http(s) requests that use Request library with optimized proxy support.",
+  "homepage": "https://github.com/mikakaraila/node-red-contrib-opcua#readme",
+  "keywords": [
+    "node-red",
+    "http",
+    "https",
+    "request",
+    "proxy"
+  ],
+  "license": "MIT",
+  "name": "node-red-contrib-http-request-multipart",
+  "node-red": {
+    "nodes": {
+      "www-request-multipart": "www-request-multipart.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psyntium/node-red-contrib-http-request-multipart.git"
+  },
+  "scripts": {
+    "test": "karma start opcua.conf.js --log-level debug --single-run"
+  },
+  "version": "0.2.11"
+}

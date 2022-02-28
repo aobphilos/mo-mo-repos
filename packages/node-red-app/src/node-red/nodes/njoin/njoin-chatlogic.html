@@ -1,0 +1,38 @@
+
+<script type="text/javascript">
+    RED.nodes.registerType('chatlogic', {
+        color: "#b3ffb6",
+        category: 'output',
+        defaults: {
+            name: {value: ""}
+        },
+        inputs: 1,
+        outputs: 0,
+        outputLabels:[""],
+        icon: "serial.png",
+        label: function () {
+            return this.name || "chatlogic";
+        },
+        paletteLabel:"chatlogic",
+        oneditsave: function(){
+            this.name = $("#node-input-name").val().replace(/ /ig, "-");
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="chatlogic">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]common.label.name">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="chatlogic">
+    <p>
+    </p>
+
+</script>
+
+
+<!---------------------------------------- END OF NODE --------------------------------------->

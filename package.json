@@ -10,6 +10,7 @@
     "moleculer-db": "^0.8.4",
     "moleculer-db-adapter-mongo": "^0.4.7",
     "moleculer-web": "^0.9.0",
+    "node-red": "^2.2.2",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
@@ -24,6 +25,7 @@
     "@types/jest": "27.0.2",
     "@types/mkdirp": "^1.0.0",
     "@types/node": "16.11.7",
+    "@types/node-red": "^1.2.0",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
     "@typescript-eslint/parser": "~5.10.0",
     "eslint": "~8.7.0",

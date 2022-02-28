@@ -1,6 +1,7 @@
-import { IncomingMessage } from 'http';
-import { Service, ServiceBroker, Context } from 'moleculer';
+import { Service, ServiceBroker } from 'moleculer';
 import ApiGateway from 'moleculer-web';
+
+import RED from 'node-red';
 
 export default class ApiService extends Service {
   public constructor(broker: ServiceBroker) {
@@ -21,7 +22,7 @@ export default class ApiService extends Service {
               '**',
             ],
             // Route-level Express middlewares. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Middlewares
-            use: [],
+            use: [RED.httpAdmin, RED.httpNode],
             // Enable/disable parameter merging method. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Disable-merging
             mergeParams: true,
 
@@ -166,6 +167,23 @@ export default class ApiService extends Service {
 					}
 				},
 				 */
+      },
+
+      created: () => {
+        RED.init(this['server'], {
+          uiHost: process.env['HOST'] || '127.0.0.1',
+          uiPort: Number.parseInt(`${process.env['PORT']}`, 10) || 1580,
+          // httpAdminRoot: '/red',
+          // httpNodeRoot: '/api',
+          // httpRoot: '/red',
+          // nodesDir: __dirname + '/node-red/nodes',
+        });
+        this.logger.info('RED created', __dirname + './nodes');
+      },
+      started: () => {
+        RED.start();
+        this.logger.info('RED started');
+        return Promise.resolve();
       },
     });
   }

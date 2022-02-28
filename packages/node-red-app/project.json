@@ -10,7 +10,14 @@
         "outputPath": "dist/packages/node-red-app",
         "main": "packages/node-red-app/moleculer.config.ts",
         "tsConfig": "packages/node-red-app/tsconfig.app.json",
-        "assets": ["packages/node-red-app/*.md"]
+        "assets": [
+          "packages/node-red-app/*.md",
+          {
+            "input": "./packages/node-red-app/src/node-red",
+            "glob": "**/*",
+            "output": "./src/node-red"
+          }
+        ]
       },
       "configurations": {
         "production": {
@@ -60,5 +67,5 @@
       }
     }
   },
-  "tags": ["main-app"]
+  "tags": ["scope:main"]
 }
